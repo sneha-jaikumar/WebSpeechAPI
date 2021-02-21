@@ -1,17 +1,67 @@
 body {
-    background-color: #f598e7;
-    color: #426ceb;
+    background-color: #ffecd9;
 }
 
-#placeholder {
-    color:#f00505;
+h1{
+    color: #fff;
+    font-family: 'Mulish', serif;
+    font-size: 9rem;
+    font-weight: 500;
+    height: 10%;
+    line-height: 10rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.3rem 0.3rem #a2ccb6;
+
+}
+
+h2{
+    color: #fff;
+    font-family: 'Mulish', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    width: 50%;
+    line-height: 4rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.1rem 0.1rem #a2ccb6;
+    width: 100%;
+
+}
+
+h3{
+    color: #a2ccb6;
+    font-family: 'Mulish', serif;
+    font-size: 3.5rem;
+    width: 50%;
+    line-height: 4rem;
+    letter-spacing: 0.2rem;
+    width: 100%;
+
+}
+
+
+#emoji {
+    font-size: 117px;
+    /* visibility: hidden; */
+    position: absolute;
+    left: 43%;
+    bottom: 75.5%;
+    text-shadow: 0.2rem 0.2rem #fff;
+
+    
 }
 
 button {
-    background-color: orange;
+    width: 15rem;
+    height: 5rem;
+    background-color: #a2ccb6;
+    color:#fff; 
+    border: none;
+    font-family: 'Baloo Da 2';
+    font-weight: 250;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-#emoji {
-    font-size: 100px;
-    /* visibility: hidden; */
-}
+  
