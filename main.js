@@ -19,19 +19,19 @@ function speak(word) {
 // Speak cake and display it on page 
 cake.onclick = function() {
     speak(cake.innerHTML);
-    placeholder.innerHTML = "My favorite is: " + cake.innerHTML;
+    placeholder.innerHTML = "Your favorite dessert is: " + cake.innerHTML;
 }
 
 // Speak pie and display it on page 
 pie.onclick = function() {
     speak(pie.innerHTML);
-    placeholder.innerHTML = "My favorite is: " + pie.innerHTML;
+    placeholder.innerHTML = "Your favorite dessert is: " + pie.innerHTML;
 }
 
 // Speak ice cream and display it on page 
 icecream.onclick = function() {
     speak(icecream.innerHTML);
-    placeholder.innerHTML = "My favorite is: " + icecream.innerHTML;
+    placeholder.innerHTML = "Your favorite dessert is: " + icecream.innerHTML;
 }
 
 // Declare recognition object 
@@ -53,5 +53,7 @@ voice.onclick = function() {
 recognition.onresult = function(event) {
     var favorite = event.results[0][0].transcript;
     speak(favorite);
-    placeholder.innerHTML = "My favorite is: " + favorite;
+    placeholder.innerHTML = "Your favorite dessert is: " + favorite;
 }
+
+
