@@ -2,25 +2,31 @@
    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width">
+        <meta name = "viewport" content = "width = device - width, initial - scale = 1.0">
+        <title>Web Speech API Demo</title>
+        <link rel = "stylesheet" href = "style.css"/> 
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel= "preconnect" href="https://fonts.gstatic.com">
+        <link href= "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;0,600;0,900;1,300&display=swap" rel="stylesheet">
 
-        <title>Favorite Dessert: Web Speech API Demonstration</title>
-        <link rel="stylesheet" href="style.css">
+        <!--meta name="viewport" content="width=device-width"-->
+
         <script src="main.js" defer></script>
     </head>
     <body>
         <div>
-            <h1>Choose your favorite!</h1>
+            <h1>Talk to Me!</h1> <h3 id="emoji">🍰</h3>
+            <h2>What is your favorite dessert?</h2>
             <button class="preset" id="cake">Cake</button>
+            &nbsp;
+            &nbsp;
             <button class="preset" id="pie">Pie</button>
+            &nbsp;
+            &nbsp;
             <button class="preset" id="icecream">Ice cream</button>
-        </div>
-        
-        <div>
-            <h1>Or if you prefer something else...</h1>
-            <button id="voice">Tell us another favorite</button>
-            <h1 id="placeholder"><span>&rarr;</span>My favorite is: </h1>
-            <h1 id="emoji">😋</h1>
+            <h2>Have another favorite dessert? Talk to me, click below to speak.</h2>
+            <button id="voice">Click Here</button>
+            <h3 id="placeholder"><span>&rarr;</span><b>Your favorite dessert is:</b></h3>
         </div>
     </body>
 </html>
