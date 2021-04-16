@@ -1,0 +1,1 @@
+source activate /opt/anaconda3;/opt/anaconda3/bin/python -i

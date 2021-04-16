@@ -1,0 +1,2197 @@
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="setup" timestamp="Wed Jun  3 09:11:32 2020">
+	<button id="simple_action_btn" OnPress="simple_action_btn_OnPress" OnPressID="simple_headend_combobox"/>
+	<menuitem id="vpn_connect_toggle_menu_item" OnPress="vpn_connect_toggle_menu_item_OnPress" OnPressID="simple_headend_combobox"/>
+	<combobox id="simple_headend_combobox" OnSelect="simple_headend_combobox_OnSelect" OnSelectID="simple_headend_combobox"/>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<label id="simple_substatus_full" value=""/>
+	<label id="simple_tile_label" value="VPN:"/>
+	<preferences/>
+	<outlinelistbox id="stat_outlinelistbox" updaterows="false" num_columns="2">
+		<listgroup id="group_connection_info">
+			<listrowcolumn label="Connection Information"/>
+			<listrow id="id_stat_state">
+				<listrowcolumn label="State:"/>
+				<listrowcolumn label="Disconnected"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v4">
+				<listrowcolumn label="Tunnel Mode (IPv4):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v6">
+				<listrowcolumn label="Tunnel Mode (IPv6):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_dyn_exc">
+				<listrowcolumn label="Dynamic Tunnel Exclusion:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_dyn_inc">
+				<listrowcolumn label="Dynamic Tunnel Inclusion:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_time_connected">
+				<listrowcolumn label="Duration:"/>
+				<listrowcolumn label="00:00:00"/>
+			</listrow>
+			<listrow id="id_session_disconnect">
+				<listrowcolumn label="Session Disconnect:"/>
+				<listrowcolumn label="None"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_addr_info">
+			<listrowcolumn label="Address Information"/>
+			<listrow id="id_client_addr_ipv4">
+				<listrowcolumn label="Client (IPv4):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_client_addr_ipv6">
+				<listrowcolumn label="Client (IPv6):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_server_addr">
+				<listrowcolumn label="Server:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_bytes">
+			<listrowcolumn label="Bytes"/>
+			<listrow id="id_bytes_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_bytes_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_frames">
+			<listrowcolumn label="Frames"/>
+			<listrow id="id_frames_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_frames_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_ctrl_frames">
+			<listrowcolumn label="Control Frames"/>
+			<listrow id="id_ctrl_frames_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_ctrl_frames_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_client_mgmt">
+			<listrowcolumn label="Client Management"/>
+			<listrow id="id_admin_domain">
+				<listrowcolumn label="Administrative Domain:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_profile_name">
+				<listrowcolumn label="Profile Name:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_transport_info">
+			<listrowcolumn label="Transport Information"/>
+			<listrow id="id_protocol">
+				<listrowcolumn label="Protocol:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_cipher">
+				<listrowcolumn label="Cipher:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_compression">
+				<listrowcolumn label="Compression:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_proxy_addr">
+				<listrowcolumn label="Proxy Address:"/>
+				<listrowcolumn label="No Proxy"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_feature_config">
+			<listrowcolumn label="Feature Configuration"/>
+			<listrow id="id_fips_mode">
+				<listrowcolumn label="FIPS Mode:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tnd_mode">
+				<listrowcolumn label="Trusted Network Detection:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_always_on_mode">
+				<listrowcolumn label="Always On:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_sms">
+			<listrowcolumn label="Secure Mobility Solution"/>
+			<listrow id="id_secure_mobility_soln_status">
+				<listrowcolumn label="Status:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_secure_mobility_soln_appl">
+				<listrowcolumn label="Appliance:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+	</outlinelistbox>
+	<button id="stat_reset_btn" label="Reset" disabled="true" OnPress="stat_reset_btn_OnPress"/>
+	<button id="stat_export_btn" label="Export Stats..." OnPress="stat_export_btn_OnPress"/>
+	<outlinelistbox id="routes_outlinelistbox" updaterows="false" num_columns="1"/>
+	<outlinelistbox id="firewall_outlinelistbox" updaterows="false" num_columns="6">
+		<listhead>
+			<listheader label="Interface"/>
+			<listheader label="Permission"/>
+			<listheader label="Protocol"/>
+			<listheader label="Src Port"/>
+			<listheader label="Dst Port"/>
+			<listheader label="Destination Address"/>
+		</listhead>
+	</outlinelistbox>
+	<outlinelistbox id="overview_stat_outlinelistbox" updaterows="true" num_columns="2">
+		<listgroup id="group_vpn">
+			<listrowcolumn label="VPN (Disconnected)"/>
+			<listrow id="id_bytes_sent">
+				<listrowcolumn label="Bytes Sent: "/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_bytes_recv">
+				<listrowcolumn label="Bytes Received: "/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_time_connected">
+				<listrowcolumn label="Time Connected: "/>
+				<listrowcolumn label="00:00:00"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v4">
+				<listrowcolumn label="Client Address (IPv4): "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v6">
+				<listrowcolumn label="Client Address (IPv6): "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_server_addr">
+				<listrowcolumn label="Server Address: "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+	</outlinelistbox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:32 2020" state="Neutral">
+	<traystate id="tray_state_string" value="Disconnected"/>
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:32 2020">
+	<label id="simple_status" value="Ready to connect." tooltip="Ready to connect."/>
+	<log messagehistory="Ready to connect."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" tag="stat_update" timestamp="Wed Jun  3 09:11:32 2020">
+	<outlinelistbox id="stat_outlinelistbox" updaterows="true" num_columns="2">
+		<listgroup id="group_connection_info">
+			<listrowcolumn label="Connection Information"/>
+			<listrow id="id_stat_state">
+				<listrowcolumn label="State:"/>
+				<listrowcolumn label="Disconnected"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v4">
+				<listrowcolumn label="Tunnel Mode (IPv4):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v6">
+				<listrowcolumn label="Tunnel Mode (IPv6):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_dyn_exc">
+				<listrowcolumn label="Dynamic Tunnel Exclusion:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_dyn_inc">
+				<listrowcolumn label="Dynamic Tunnel Inclusion:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_time_connected">
+				<listrowcolumn label="Duration:"/>
+				<listrowcolumn label="00:00:00"/>
+			</listrow>
+			<listrow id="id_session_disconnect">
+				<listrowcolumn label="Session Disconnect:"/>
+				<listrowcolumn label="None"/>
+			</listrow>
+			<listrow id="id_stat_mgmt_tun_state">
+				<listrowcolumn label="Management Connection State:"/>
+				<listrowcolumn label="Disconnected (disabled)"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_addr_info">
+			<listrowcolumn label="Address Information"/>
+			<listrow id="id_client_addr_ipv4">
+				<listrowcolumn label="Client (IPv4):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_client_addr_ipv6">
+				<listrowcolumn label="Client (IPv6):"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_server_addr">
+				<listrowcolumn label="Server:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_bytes">
+			<listrowcolumn label="Bytes"/>
+			<listrow id="id_bytes_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_bytes_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_frames">
+			<listrowcolumn label="Frames"/>
+			<listrow id="id_frames_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_frames_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_ctrl_frames">
+			<listrowcolumn label="Control Frames"/>
+			<listrow id="id_ctrl_frames_sent">
+				<listrowcolumn label="Sent:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_ctrl_frames_recv">
+				<listrowcolumn label="Received:"/>
+				<listrowcolumn label="0"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_client_mgmt">
+			<listrowcolumn label="Client Management"/>
+			<listrow id="id_admin_domain">
+				<listrowcolumn label="Administrative Domain:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_profile_name">
+				<listrowcolumn label="Profile Name:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_transport_info">
+			<listrowcolumn label="Transport Information"/>
+			<listrow id="id_protocol">
+				<listrowcolumn label="Protocol:"/>
+				<listrowcolumn label="Unknown"/>
+			</listrow>
+			<listrow id="id_cipher">
+				<listrowcolumn label="Cipher:"/>
+				<listrowcolumn label="Unknown"/>
+			</listrow>
+			<listrow id="id_compression">
+				<listrowcolumn label="Compression:"/>
+				<listrowcolumn label="None"/>
+			</listrow>
+			<listrow id="id_proxy_addr">
+				<listrowcolumn label="Proxy Address:"/>
+				<listrowcolumn label="No Proxy"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_feature_config">
+			<listrowcolumn label="Feature Configuration"/>
+			<listrow id="id_fips_mode">
+				<listrowcolumn label="FIPS Mode:"/>
+				<listrowcolumn label="Disabled"/>
+			</listrow>
+			<listrow id="id_tnd_mode">
+				<listrowcolumn label="Trusted Network Detection:"/>
+				<listrowcolumn label="Disabled"/>
+			</listrow>
+			<listrow id="id_always_on_mode">
+				<listrowcolumn label="Always On:"/>
+				<listrowcolumn label="Disabled"/>
+			</listrow>
+		</listgroup>
+		<listgroup id="group_sms">
+			<listrowcolumn label="Secure Mobility Solution"/>
+			<listrow id="id_secure_mobility_soln_status">
+				<listrowcolumn label="Status:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_secure_mobility_soln_appl">
+				<listrowcolumn label="Appliance:"/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+	</outlinelistbox>
+	<outlinelistbox id="routes_outlinelistbox" updaterows="false" num_columns="1"/>
+	<outlinelistbox id="firewall_outlinelistbox" updaterows="false" num_columns="6">
+		<listhead>
+			<listheader label="Interface"/>
+			<listheader label="Permission"/>
+			<listheader label="Protocol"/>
+			<listheader label="Src Port"/>
+			<listheader label="Dst Port"/>
+			<listheader label="Destination Address"/>
+		</listhead>
+	</outlinelistbox>
+	<outlinelistbox id="overview_stat_outlinelistbox" updaterows="true" num_columns="2">
+		<listgroup id="group_vpn">
+			<listrowcolumn label="VPN (Disconnected)"/>
+			<listrow id="id_bytes_sent">
+				<listrowcolumn label="Bytes Sent: "/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_bytes_recv">
+				<listrowcolumn label="Bytes Received: "/>
+				<listrowcolumn label="0"/>
+			</listrow>
+			<listrow id="id_time_connected">
+				<listrowcolumn label="Time Connected: "/>
+				<listrowcolumn label="00:00:00"/>
+			</listrow>
+			<listrow id="id_session_disconnect">
+				<listrowcolumn label="Session Disconnect: "/>
+				<listrowcolumn label="None"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v4">
+				<listrowcolumn label="Client Address (IPv4): "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_tunnel_mode_v6">
+				<listrowcolumn label="Client Address (IPv6): "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+			<listrow id="id_server_addr">
+				<listrowcolumn label="Server Address: "/>
+				<listrowcolumn label="Not Available"/>
+			</listrow>
+		</listgroup>
+	</outlinelistbox>
+</acguiNotice>
+<acguiNotice type="pluginLayout"></acguiNotice><acguiEvent id="simple_headend_combobox_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="simple_headend_combobox" disabled="false" hidden="false" tabindex="0" tooltip="" value="vpn.unc.edu">
+    <comboitem label=""></comboitem>
+</combobox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:49 2020" state="Transition">
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="true"/>
+	<combobox id="simple_headend_combobox" disabled="true"/>
+	<checkbox id="AutoConnectOnStart" disabled="true"/>
+	<checkbox id="MinimizeOnConnect" disabled="true"/>
+	<checkbox id="LocalLanAccess" disabled="true"/>
+	<checkbox id="DisableCaptivePortalDetection" disabled="true"/>
+	<checkbox id="BlockUntrustedServers" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:49 2020">
+	<combobox id="simple_headend_combobox" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:50 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:50 2020">
+	<label id="simple_status" value="Posture Assessment: Required for access" tooltip="Posture Assessment: Required for access"/>
+	<log messagehistory="Posture Assessment: Required for access"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:50 2020">
+	<label id="simple_status" value="Posture Assessment: Checking for updates..." tooltip="Posture Assessment: Checking for updates..."/>
+	<log messagehistory="Posture Assessment: Checking for updates..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:50 2020">
+	<label id="simple_status" value="Posture Assessment: Updating..." tooltip="Posture Assessment: Updating..."/>
+	<log messagehistory="Posture Assessment: Updating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:51 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:54 2020">
+	<label id="simple_status" value="Posture Assessment: Active" tooltip="Posture Assessment: Active"/>
+	<log messagehistory="Posture Assessment: Active"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:54 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:54 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:54 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:11:54 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:11:54 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt" selected="true"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="group_list_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value=""></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:11 2020">
+	<label id="group_list_lbl" disabled="true"/>
+	<combobox id="group_list" disabled="true"/>
+	<label id="username_lbl" disabled="true"/>
+	<textbox id="username" disabled="true"/>
+	<label id="password_lbl" disabled="true"/>
+	<passwordbox id="password" disabled="true"/>
+	<label id="secondary_password_lbl" disabled="true"/>
+	<passwordbox id="secondary_password" disabled="true"/>
+	<button id="credential_cancel_btn" disabled="true"/>
+	<button id="credential_ok_btn" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:12 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:12 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:12 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:12:12 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:12 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:12:12 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_ok_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E006000004021690300600000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C15000000100000000000000000000000000000000000000000C175462EF552616CD9C07F16C5F1860000000001"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:12:33 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:33 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:33 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:33 2020" state="Attention">
+	<label id="simple_status" value="Login failed." tooltip="Login failed."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:12:33 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:12:33 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Login failed."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="snehaj" disabled="false" hidden="false" maxlength="32" audible="Username:" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" focus="true" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_ok_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E000000000000000000000000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C160000001000000000000000000000000000000000000000C8EA4C6355B819231D1762F1DD2A6210000000000000"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:13:14 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:13:14 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:13:15 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:13:15 2020" state="Attention">
+	<label id="simple_status" value="Login failed." tooltip="Login failed."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:13:15 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:13:15 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Login failed."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="snehaj" disabled="false" hidden="false" maxlength="32" audible="Username:" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" focus="true" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_ok_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E000000000000000000000000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C15000000100000000000000000000000000000000000000000C175462EF552616CD9C07F16C5F18601000E0018"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:05 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:05 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:05 2020" id="error_popup" type="error">
+		<title value="Cisco AnyConnect"/>
+		<text value="Authentication attempt timed out"/>
+	</popup>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:05 2020">
+	<label id="simple_status" value="Authentication attempt timed out" tooltip="Authentication attempt timed out"/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:05 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:05 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:05 2020">
+	<label id="simple_status" value="Ready to connect." tooltip="Ready to connect."/>
+	<log messagehistory="Ready to connect."/>
+</acguiNotice>
+<acguiEvent id="simple_action_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="simple_headend_combobox" disabled="false" hidden="false" tabindex="0" tooltip="" value="vpn.unc.edu">
+    <comboitem label="vpn.unc.edu"></comboitem>
+</combobox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020" state="Transition">
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="true"/>
+	<combobox id="simple_headend_combobox" disabled="true"/>
+	<checkbox id="AutoConnectOnStart" disabled="true"/>
+	<checkbox id="MinimizeOnConnect" disabled="true"/>
+	<checkbox id="LocalLanAccess" disabled="true"/>
+	<checkbox id="DisableCaptivePortalDetection" disabled="true"/>
+	<checkbox id="BlockUntrustedServers" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020">
+	<combobox id="simple_headend_combobox" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020">
+	<label id="simple_status" value="Posture Assessment: Required for access" tooltip="Posture Assessment: Required for access"/>
+	<log messagehistory="Posture Assessment: Required for access"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020">
+	<label id="simple_status" value="Posture Assessment: Checking for updates..." tooltip="Posture Assessment: Checking for updates..."/>
+	<log messagehistory="Posture Assessment: Checking for updates..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:08 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:09 2020">
+	<label id="simple_status" value="Posture Assessment: Active" tooltip="Posture Assessment: Active"/>
+	<log messagehistory="Posture Assessment: Active"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:09 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:09 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:09 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:09 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:09 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt" selected="true"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="group_list_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value=""></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F666C"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:12 2020">
+	<label id="group_list_lbl" disabled="true"/>
+	<combobox id="group_list" disabled="true"/>
+	<label id="username_lbl" disabled="true"/>
+	<textbox id="username" disabled="true"/>
+	<label id="password_lbl" disabled="true"/>
+	<passwordbox id="password" disabled="true"/>
+	<label id="secondary_password_lbl" disabled="true"/>
+	<passwordbox id="secondary_password" disabled="true"/>
+	<button id="credential_cancel_btn" disabled="true"/>
+	<button id="credential_ok_btn" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:13 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:13 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:13 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:13 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:13 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:13 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_ok_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E006000000000000000000000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C15000000100000000000000000000000000000000000000000C175462EF552616CD9C07F16C5F1860060000000"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:26 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:26 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:27 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:27 2020" state="Attention">
+	<label id="simple_status" value="Login failed." tooltip="Login failed."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:22:27 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:22:27 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Login failed."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="snehaj" disabled="false" hidden="false" maxlength="32" audible="Username:" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" focus="true" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_cancel_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn"></acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:25:37 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:37 2020">
+	<log messagehistory="User credentials prompt cancelled."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:38 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:38 2020">
+	<label id="simple_status" value="Ready to connect." tooltip="Ready to connect."/>
+	<log messagehistory="Ready to connect."/>
+</acguiNotice>
+<acguiEvent id="simple_headend_combobox_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="simple_headend_combobox" disabled="false" hidden="false" tabindex="0" tooltip="" value="vpn.unc.edu">
+    <comboitem label="vpn.unc.edu"></comboitem>
+</combobox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020" state="Transition">
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="true"/>
+	<combobox id="simple_headend_combobox" disabled="true"/>
+	<checkbox id="AutoConnectOnStart" disabled="true"/>
+	<checkbox id="MinimizeOnConnect" disabled="true"/>
+	<checkbox id="LocalLanAccess" disabled="true"/>
+	<checkbox id="DisableCaptivePortalDetection" disabled="true"/>
+	<checkbox id="BlockUntrustedServers" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020">
+	<combobox id="simple_headend_combobox" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020">
+	<label id="simple_status" value="Posture Assessment: Required for access" tooltip="Posture Assessment: Required for access"/>
+	<log messagehistory="Posture Assessment: Required for access"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020">
+	<label id="simple_status" value="Posture Assessment: Checking for updates..." tooltip="Posture Assessment: Checking for updates..."/>
+	<log messagehistory="Posture Assessment: Checking for updates..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:42 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:43 2020">
+	<label id="simple_status" value="Posture Assessment: Active" tooltip="Posture Assessment: Active"/>
+	<log messagehistory="Posture Assessment: Active"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:43 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:43 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:43 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:43 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:25:43 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt" selected="true"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="group_list_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value=""></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:48 2020">
+	<label id="group_list_lbl" disabled="true"/>
+	<combobox id="group_list" disabled="true"/>
+	<label id="username_lbl" disabled="true"/>
+	<textbox id="username" disabled="true"/>
+	<label id="password_lbl" disabled="true"/>
+	<passwordbox id="password" disabled="true"/>
+	<label id="secondary_password_lbl" disabled="true"/>
+	<passwordbox id="secondary_password" disabled="true"/>
+	<button id="credential_cancel_btn" disabled="true"/>
+	<button id="credential_ok_btn" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:48 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:49 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:49 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:25:49 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:25:49 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:25:49 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="secondary_password_OnPressEnter" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E000000000000000000000000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C160000001000000000000000000000000000000000000000C8EA4C6355B819231D1762F1DD2A6210000000000000"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:00 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:00 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:00 2020" id="error_popup" type="error">
+		<title value="Cisco AnyConnect"/>
+		<text value="Authentication attempt timed out"/>
+	</popup>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:00 2020">
+	<label id="simple_status" value="Authentication attempt timed out" tooltip="Authentication attempt timed out"/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:00 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:00 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:00 2020">
+	<label id="simple_status" value="Ready to connect." tooltip="Ready to connect."/>
+	<log messagehistory="Ready to connect."/>
+</acguiNotice>
+<acguiEvent id="simple_action_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="simple_headend_combobox" disabled="false" hidden="false" tabindex="0" tooltip="" value="vpn.unc.edu">
+    <comboitem label="vpn.unc.edu"></comboitem>
+</combobox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020" state="Transition">
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="true"/>
+	<combobox id="simple_headend_combobox" disabled="true"/>
+	<checkbox id="AutoConnectOnStart" disabled="true"/>
+	<checkbox id="MinimizeOnConnect" disabled="true"/>
+	<checkbox id="LocalLanAccess" disabled="true"/>
+	<checkbox id="DisableCaptivePortalDetection" disabled="true"/>
+	<checkbox id="BlockUntrustedServers" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020">
+	<combobox id="simple_headend_combobox" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020">
+	<label id="simple_status" value="Posture Assessment: Required for access" tooltip="Posture Assessment: Required for access"/>
+	<log messagehistory="Posture Assessment: Required for access"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020">
+	<label id="simple_status" value="Posture Assessment: Checking for updates..." tooltip="Posture Assessment: Checking for updates..."/>
+	<log messagehistory="Posture Assessment: Checking for updates..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:03 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:04 2020">
+	<label id="simple_status" value="Posture Assessment: Active" tooltip="Posture Assessment: Active"/>
+	<log messagehistory="Posture Assessment: Active"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:04 2020">
+	<label id="simple_status" value="Posture Assessment: Initiating..." tooltip="Posture Assessment: Initiating..."/>
+	<log messagehistory="Posture Assessment: Initiating..."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:04 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:04 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:04 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:04 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt" selected="true"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="group_list_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCERP"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value=""></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6669"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:07 2020">
+	<label id="group_list_lbl" disabled="true"/>
+	<combobox id="group_list" disabled="true"/>
+	<label id="username_lbl" disabled="true"/>
+	<textbox id="username" disabled="true"/>
+	<label id="password_lbl" disabled="true"/>
+	<passwordbox id="password" disabled="true"/>
+	<label id="secondary_password_lbl" disabled="true"/>
+	<passwordbox id="secondary_password" disabled="true"/>
+	<button id="credential_cancel_btn" disabled="true"/>
+	<button id="credential_ok_btn" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:07 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:08 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:08 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:08 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:08 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:08 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus"/>
+					<comboitem label="UNCERP" selected="true"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="group_list_OnSelect" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value=""></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C110000001000000000000000000000000000000000000000C49AEEAE91792CE7DB98F3ABB0AD7F6600"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:10 2020">
+	<label id="group_list_lbl" disabled="true"/>
+	<combobox id="group_list" disabled="true"/>
+	<label id="username_lbl" disabled="true"/>
+	<textbox id="username" disabled="true"/>
+	<label id="password_lbl" disabled="true"/>
+	<passwordbox id="password" disabled="true"/>
+	<label id="secondary_password_lbl" disabled="true"/>
+	<passwordbox id="secondary_password" disabled="true"/>
+	<button id="credential_cancel_btn" disabled="true"/>
+	<button id="credential_ok_btn" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:10 2020">
+	<label id="simple_status" value="Contacting vpn.unc.edu." tooltip="Contacting vpn.unc.edu."/>
+	<log messagehistory="Contacting vpn.unc.edu."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:10 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:10 2020" state="Attention">
+	<label id="simple_status" value="Please enter your username and password." tooltip="Please enter your username and password."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:10 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:10 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:10 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Please enter your username and password."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="" disabled="false" hidden="false" maxlength="32" audible="Username:" focus="true" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiEvent id="credential_ok_btn_OnPress" module="com.cisco.anyconnect.presentation.vpn">
+<combobox id="group_list" disabled="false" hidden="false" tabindex="0" tooltip="" value="UNCCampus"></combobox>
+<textbox id="username" disabled="false" hidden="false" tabindex="0" tooltip="" value="snehaj"></textbox>
+<passwordbox id="password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C1C0000001000000000000000000000000000000000000000EEC84F275119366F20ECC9C102DE4C4E006000000000000000000000"></passwordbox>
+<passwordbox id="secondary_password" disabled="false" hidden="false" tabindex="0" tooltip="" value="EF55734C160000001000000000000000000000000000000000000000C8EA4C6355B819231D1762F1DD2A6210006000000000"></passwordbox>
+</acguiEvent><acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:22 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:22 2020">
+	<log messagehistory="User credentials entered."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:23 2020">
+	<application show="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:23 2020" state="Attention">
+	<label id="simple_status" value="Login failed." tooltip="Login failed."/>
+	<button id="simple_action_btn" label="Connect" disabled="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:30:23 2020">
+	<combobox id="simple_headend_combobox" disabled="true" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:30:23 2020" id="credential_dialog" type="custom">
+		<title value="Cisco AnyConnect | vpn.unc.edu"/>
+		<layout>
+			<row>
+				<label id="credential_prompt_header" value="Login failed."/>
+			</row>
+			<row>
+				<label id="group_list_lbl" value="Group:" disabled="false" hidden="false"/>
+				<combobox id="group_list" disabled="false" hidden="false" editable="false" audible="Group:" OnSelect="group_list_OnSelect" OnSelectID="group_list,username,password,secondary_password">
+					<comboitem label="AcklandArt"/>
+					<comboitem label="CH-IMS"/>
+					<comboitem label="CPC"/>
+					<comboitem label="CTCAdmin"/>
+					<comboitem label="CampusServices"/>
+					<comboitem label="CampusServicesIT"/>
+					<comboitem label="CampusServicesV"/>
+					<comboitem label="CompSci"/>
+					<comboitem label="Dentistry"/>
+					<comboitem label="ERDS-Dev"/>
+					<comboitem label="ERP-Dev"/>
+					<comboitem label="EnergyServicesADM"/>
+					<comboitem label="EnergyServicesCGS"/>
+					<comboitem label="EnergyServicesCWS"/>
+					<comboitem label="EnergyServicesEDS"/>
+					<comboitem label="FALCS"/>
+					<comboitem label="FPG"/>
+					<comboitem label="FnA"/>
+					<comboitem label="Full-Tunnel"/>
+					<comboitem label="HInform"/>
+					<comboitem label="HostedDB"/>
+					<comboitem label="IAAdmin"/>
+					<comboitem label="ITS-EA-US"/>
+					<comboitem label="ITS-RC-Duo"/>
+					<comboitem label="ITS-Sys-VPN"/>
+					<comboitem label="ITSAdmin"/>
+					<comboitem label="ITSSecurity"/>
+					<comboitem label="NCTraCS"/>
+					<comboitem label="Nursing"/>
+					<comboitem label="RC-Cust"/>
+					<comboitem label="RENCI"/>
+					<comboitem label="RENCI-ACIS"/>
+					<comboitem label="SPHFT"/>
+					<comboitem label="Sheps-Ctr"/>
+					<comboitem label="Telemed"/>
+					<comboitem label="UNCCampus" selected="true"/>
+					<comboitem label="UNCERP"/>
+					<comboitem label="UNCFSA"/>
+					<comboitem label="UNCSNAP"/>
+					<comboitem label="UNCVend"/>
+					<comboitem label="VPN-Test-Group"/>
+					<comboitem label="VPNSecurity"/>
+					<comboitem label="WUNC"/>
+				</combobox>
+			</row>
+			<row>
+				<label id="username_lbl" value="Username:" disabled="false" hidden="false"/>
+				<textbox id="username" value="snehaj" disabled="false" hidden="false" maxlength="32" audible="Username:" OnPressEnter="username_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="password_lbl" value="Password:" disabled="false" hidden="false"/>
+				<passwordbox id="password" value="" disabled="false" hidden="false" maxlength="40" audible="Password:" focus="true" OnPressEnter="password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<label id="secondary_password_lbl" value="Second Password:" disabled="false" hidden="false"/>
+				<passwordbox id="secondary_password" value="" disabled="false" hidden="false" maxlength="40" audible="Second Password:" OnPressEnter="secondary_password_OnPressEnter" OnPressEnterID="group_list,username,password,secondary_password"/>
+			</row>
+			<row>
+				<textarea id="banner" disabled="true" value='2-Step Verification (via Duo) is now REQUIRED to use the UNCCampus VPN group.  See https://its.unc.edu/2-step and https://help.unc.edu/duo for more information.  Enter "push", "phone", "sms" or a passcode from the Duo app as the Second Password, depending on your registered device.
+
+Welcome to the VPN service of the University of North Carolina at Chapel Hill.  Unauthorized access to this system is prohibited.  This is a University system intended for University purposes only.
+
+The University reserves the right to monitor the use of this system as required to ensure its stability, availability, and security.
+
+Please report any problems to 919-962-HELP, or go to http://help.unc.edu and click on "Submit a Help Request" to submit a help request.'/>
+			</row>
+			<row>
+				<button id="credential_cancel_btn" label="Cancel" OnPress="credential_cancel_btn_OnPress"/>
+				<button id="credential_ok_btn" label="OK" OnPress="credential_ok_btn_OnPress" OnPressID="group_list,username,password,secondary_password"/>
+			</row>
+		</layout>
+		<closebutton id="credential_close" OnClose="credential_close_OnClose"/>
+	</popup>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="popup">
+	<popup timestamp="Wed Jun  3 09:40:43 2020" id="credential_dialog" dispose="true"/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:40:43 2020">
+	<log messagehistory="User credentials prompt cancelled."/>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:40:43 2020" state="Neutral">
+	<button id="stat_reset_btn" disabled="true"/>
+	<menuitem id="vpn_connect_toggle_menu_item" label="Connect" disabled="false"/>
+	<button id="simple_action_btn" label="Connect" disabled="false" focus="true"/>
+	<combobox id="simple_headend_combobox" disabled="false" editable="true">
+		<comboitem label="vpn.unc.edu" selected="true"/>
+	</combobox>
+	<label id="simple_substatus_left" value=""/>
+	<label id="simple_substatus_right" value=""/>
+	<application disableQuit="false"/>
+	<preferences>
+		<row>
+			<checkbox id="AutoConnectOnStart" label="Start VPN when AnyConnect is started" checked="false" disabled="false" OnPress="AutoConnectOnStart_OnPress" OnPressID="AutoConnectOnStart"/>
+		</row>
+		<row>
+			<checkbox id="MinimizeOnConnect" label="Minimize AnyConnect on VPN connect" checked="true" disabled="false" OnPress="MinimizeOnConnect_OnPress" OnPressID="MinimizeOnConnect"/>
+		</row>
+		<row>
+			<checkbox id="LocalLanAccess" label="Allow local (LAN) access when using VPN (if configured)" checked="false" disabled="false" OnPress="LocalLanAccess_OnPress" OnPressID="LocalLanAccess"/>
+		</row>
+		<row>
+			<checkbox id="DisableCaptivePortalDetection" label="Disable Captive Portal Detection" checked="false" disabled="false" OnPress="DisableCaptivePortalDetection_OnPress" OnPressID="DisableCaptivePortalDetection"/>
+		</row>
+		<row>
+			<checkbox id="BlockUntrustedServers" label="Block connections to untrusted servers" checked="true" disabled="false" OnPress="BlockUntrustedServers_OnPress" OnPressID="BlockUntrustedServers"/>
+		</row>
+	</preferences>
+</acguiNotice>
+<acguiNotice module="com.cisco.anyconnect.presentation.vpn" type="update" timestamp="Wed Jun  3 09:40:43 2020">
+	<label id="simple_status" value="Ready to connect." tooltip="Ready to connect."/>
+	<log messagehistory="Ready to connect."/>
+</acguiNotice>
